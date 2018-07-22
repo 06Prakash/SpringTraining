@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan
+		base-package="com.example.spring.basics" />
+		
+	<bean id="cDIBusiness"
+		class="com.example.spring.basics.CDI.CDIBusiness">
+		<property name="cDIBusinessDao" ref="cDIBusinessDao" />
+	</bean>
+
+	<bean id="cDIBusinessDao"
+		class="com.example.spring.basics.CDI.CDIBusinessDao" scope="prototype">
+	</bean>
+
+	<bean id="binarySearchImpl"
+		class="com.example.spring.basics.revision.BinarySearchImpl">
+		<property name="sortAlgorithm" ref="bubbleSortAlgorithm" />
+	</bean>
+
+	<bean id="bubbleSortAlgorithm"
+		class="com.example.spring.basics.revision.BubbleSortAlgorithm"
+		scope="prototype" />
+
+	<bean id="QuickSortAlgorithm"
+		class="com.example.spring.basics.revision.QuickSortAlgorithm"
+		scope="prototype" />
+
+	<bean id="xmlJdbcClassTemplate"
+		class="com.example.spring.basics.scope.XmlJdbcClassTemplate"
+		scope="prototype">
+	</bean>
+
+	<bean id="personClassDao"
+		class="com.example.spring.basics.scope.PersonClassDao">
+		<property name="xmlJdbcClassTemplate"
+			ref="xmlJdbcClassTemplate" />
+	</bean>
+
+</beans>
