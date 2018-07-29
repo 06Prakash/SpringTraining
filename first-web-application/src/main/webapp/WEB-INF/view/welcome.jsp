@@ -9,6 +9,9 @@
 <title>Welcome Page</title>
 </head>
 <body>
-	Welcome !!!! ${name} 
-	</body>
+	<div>
+		<font color="red">${errorMessage}</font>
+	</div>
+	<div>Welcome Hi <font color="red">${name}</font> your password is <font color="red">${password}</font></div>
+</body>
 </html>

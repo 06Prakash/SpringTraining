@@ -11,7 +11,7 @@
 <body>
 	<font color="red">${errorMessage}</font>
 	<br /> Yahoo!!!! name = ${name} && Password = ${password}
-	<form action="/login.do" method="post">
+	<form action="/springmvc/login.do" method="post">
 		Name : <input type="text" name="name" /><br /> Password : <input
 			type="text" name="password" /><br /> <input type="submit"
 			name="submit"><br />
